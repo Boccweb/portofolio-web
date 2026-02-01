@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="id" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mie Ayam Pak Joko</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&amp;family=Nunito:wght@400;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    .font-fredoka { font-family: 'Fredoka', sans-serif; }
+    .font-nunito { font-family: 'Nunito', sans-serif; }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(234, 88, 12, 0.4); }
+      50% { box-shadow: 0 0 40px rgba(234, 88, 12, 0.7); }
+    }
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(-3deg); }
+      50% { transform: rotate(3deg); }
+    }
+    .float-animation { animation: float 3s ease-in-out infinite; }
+    .pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+    .wiggle { animation: wiggle 0.5s ease-in-out infinite; }
+    
+    .menu-card {
+      transition: all 0.3s ease;
+    }
+    .menu-card:hover {
+      transform: translateY(-5px) scale(1.02);
+    }
+    
+    .promo-badge {
+      background: linear-gradient(135deg, #dc2626 0%, #ea580c 100%);
+    }
+    
+    .hero-bg {
+      background: linear-gradient(135deg, #1f2937 0%, #374151 50%, #4b5563 100%);
+    }
+    
+    .menu-img {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+    
+    .menu-img-small {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .foto{
+      width: 200px;
+      border-radius: 9px;
+    }
+    .es{
+      width: 100px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+      filter: drop-shadow(0 0 20px rgba(255, 238, 0, 0.8));
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full font-nunito">
+  <div id="app" class="w-full h-full overflow-auto hero-bg"><!-- Hero Section -->
+   <header class="relative px-4 py-8 text-center"><!-- Promo Badge -->
+    <div class="absolute top-4 right-4 promo-badge text-white px-4 py-2 rounded-full text-sm font-bold wiggle shadow-lg"><span id="promo-title">🔥 PROMO SPESIAL!</span>
+    </div><!-- Logo/Icon -->
+    <div class="float-animation mb-4">
+     <div class="inline-block p-4 rounded-full shadow-xl" style="background-color: #1f2937;"><img id="logo-image" src="ytta.jpg" alt="Logo Mie Ayam" width="120" height="120" loading="lazy" class="rounded-full object-cover" onerror="console.error('Logo gagal dimuat:', this.src); this.style.background='#374151'; this.alt='Logo tidak tersedia';" style="display: block;">
+     </div>
+    </div>
+    <h1 id="shop-name" class="font-fredoka text-4xl md:text-5xl font-bold mb-2" style="color: #fbbf24;">Mie Ayam Pak Joko</h1>
+    <p id="tagline" class="text-xl md:text-2xl font-semibold" style="color: #fcd34d;">Lezat, Gurih, Bikin Nagih! 🍜</p><!-- Promo Banner -->
+    <div class="mt-6 mx-auto max-w-md p-4 rounded-2xl shadow-lg" style="background-color: #374151;">
+     <p class="text-lg font-bold" style="color: #fbbf24;"><span id="promo-text">🎉 Beli 2 Porsi Gratis 1 Es Teh! 🎉</span></p>
+    </div>
+   </header><!-- Menu Section -->
+   <section class="px-4 py-8">
+    <h2 class="font-fredoka text-3xl font-bold text-center mb-8" style="color: #fbbf24;">📋 Menu Kami</h2><!-- Mie Ayam Menu -->
+    <div class="max-w-4xl mx-auto mb-8">
+     <h3 class="font-fredoka text-xl font-semibold mb-4 px-2" style="color: #fcd34d;">🍜 Mie Ayam</h3>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="menu-card p-4 rounded-2xl shadow-md flex items-center gap-4" style="background-color: #374151;"><img id="img-mie-original" class="menu-img" src="ytta.jpg" alt="Mie Ayam Original" loading="lazy" onerror="this.style.display='none'; document.getElementById('emoji-mie-original').style.display='block';" style="display: none;" style="filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.8));">
+       <div id="emoji-mie-original" class="text-4xl" style="display: block;">
+        <img src="ytta.jpg" class="foto">
+       </div>
+       <div class="flex-1">
+        <h4 class="font-bold" style="color: #f3f4f6;">Mie Ayam Original</h4>
+        <p class="text-sm" style="color: #d1d5db;">Mie lembut + ayam cincang gurih</p>
+       </div>
+       <div class="font-bold text-lg" style="color: #fb923c;">
+        Rp 15K
+       </div>
+      </div>
+      <div class="menu-card p-4 rounded-2xl shadow-md flex items-center gap-4" style="background-color: #374151;"><img id="img-mie-bakso" class="menu-img" src="" alt="Mie Ayam Bakso" loading="lazy" onerror="this.style.display='none'; document.getElementById('emoji-mie-bakso').style.display='block';" style="display: none;">
+       <div id="emoji-mie-bakso" class="text-4xl" style="display: block;">
+        <img src="595e5e30-d569-4aba-92f0-da106f4e8f83_Go-Biz_20250124_145110.jpeg" class="foto">
+       </div>
+       <div class="flex-1">
+        <h4 class="font-bold" style="color: #f3f4f6;">Mie Ayam Bakso</h4>
+        <p class="text-sm" style="color: #d1d5db;">+ Bakso sapi kenyal</p>
+       </div>
+       <div class="font-bold text-lg" style="color: #fb923c;">
+        Rp 20K
+       </div>
+      </div>
+      <div class="menu-card p-4 rounded-2xl shadow-md flex items-center gap-4" style="background-color: #374151;"><img id="img-mie-ceker" class="menu-img" src="" alt="Mie Ayam Ceker" loading="lazy" onerror="this.style.display='none'; document.getElementById('emoji-mie-ceker').style.display='block';" style="display: none;">
+       <div id="emoji-mie-ceker" class="text-4xl" style="display: block;">
+        <img src="ceker.jpg" class="foto" >
+       </div>
+       <div class="flex-1">
+        <h4 class="font-bold" style="color: #cbd2e0;">Mie Ayam Ceker</h4>
+        <p class="text-sm" style="color: #d1d5db;">+ Ceker ayam empuk</p>
+       </div>
+       <div class="font-bold text-lg" style="color: #fb923c;">
+        Rp 18K
+       </div>
+      </div>
+      <div class="menu-card p-4 rounded-2xl shadow-md flex items-center gap-4 border-2" style="background-color: #4b5563; border-color: #f97316;"><img id="img-mie-komplit" class="menu-img" src="" alt="Mie Ayam Komplit" loading="lazy" onerror="this.style.display='none'; document.getElementById('emoji-mie-komplit').style.display='block';" style="display: none;">
+       <div id="emoji-mie-komplit" class="text-4xl" style="display: block;">
+        👑
+       </div>
+       <div class="flex-1">
+        <h4 class="font-bold" style="color: #f3f4f6;">Mie Ayam Komplit</h4>
+        <p class="text-sm" style="color: #d1d5db;">Bakso + Ceker + Pangsit</p><span class="text-xs px-2 py-1 rounded-full font-semibold" style="background-color: #dc2626; color: #ffffff;">BEST SELLER</span>
+       </div>
+       <div class="font-bold text-lg" style="color: #fb923c;">
+        Rp 25K
+       </div>
+      </div>
+     </div>
+    </div><!-- Minuman Dingin -->
+    <div class="max-w-4xl mx-auto mb-8">
+     <h3 class="font-fredoka text-xl font-semibold mb-4 px-2" style="color: #fcd34d;">🧊 Minuman Dingin</h3>
+     <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div class="menu-card p-4 rounded-2xl shadow-md text-center" style="background-color: #374151;"><img id="img-es-teh" class="menu-img-small mx-auto mb-2" src="" alt="Es Teh Manis" loading="lazy" onerror="this.style.display='none'; document.getElementById('emoji-es-teh').style.display='block';" style="display: none;">
+       <div id="emoji-es-teh" class="text-3xl mb-2" style="display: block;">
+        <img src="es teh.jpg" class="es">
+       </div>
+       <h4 class="font-bold text-sm" style="color: #f3f4f6;">Es Teh Manis</h4>
+       <div class="font-bold mt-1" style="color: #fb923c;">
+        Rp 5K
+       </div>
+      </div>
+      <div class="menu-card p-4 rounded-2xl shadow-md text-center" style="background-color: #374151;"><img id="img-es-susu" class="menu-img-small mx-auto mb-2" src="" alt="Es Susu" loading="lazy" onerror="this.style.display='none'; document.getElementById('emoji-es-susu').style.display='block';" style="display: none;">
+       <div id="emoji-es-susu" class="text-3xl mb-2" style="display: block;">
+        <img src="susu.jpg" class="es">
+       </div>
+       <h4 class="font-bold text-sm" style="color: #f3f4f6;">Es Susu</h4>
+       <div class="font-bold mt-1" style="color: #fb923c;">
+        Rp 8K
+       </div>
+      </div>
+      <div class="menu-card p-4 rounded-2xl shadow-md text-center" style="background-color: #374151;"><img id="img-es-jeruk" class="menu-img-small mx-auto mb-2" src="" alt="Es Jeruk" loading="lazy" onerror="this.style.display='none'; document.getElementById('emoji-es-jeruk').style.display='block';" style="display: none;">
+       <div id="emoji-es-jeruk" class="text-3xl mb-2" style="display: block;">
+        <img src="jeruk.jpg" class="es">
+       </div>
+       <h4 class="font-bold text-sm" style="color: #f3f4f6;">Es Jeruk</h4>
+       <div class="font-bold mt-1" style="color: #fb923c;">
+        Rp 7K
+       </div>
+      </div>
+      <div class="menu-card p-4 rounded-2xl shadow-md text-center" style="background-color: #374151;"><img id="Dan Lain-Lain" class="menu-img-small mx-auto mb-2" src="" alt=""Dan Lain-Lain"" loading="lazy" onerror="this.style.display='none'; document.getElementById('emoji-es-lemon').style.display='block';" style="display: none;">
+       <div id="emoji-es-lemon" class="text-3xl mb-2" style="display: block;">
+        <img src="dll.jpg" class="es">
+       </div>
+       <br>
+       <h4 class="font-bold text-sm" style="color: #f3f4f6;">Dan Lain-Lain</h4>
+       <div class="font-bold mt-1" style="color: #fb923c;">
+        Rp 8K
+       </div>
+      </div>
+     </div>
+   <section class="px-4 py-8 text-center">
+    <div class="max-w-md mx-auto p-6 rounded-3xl shadow-xl" style="background-color: #374151;">
+     <h3 class="font-fredoka text-2xl font-bold mb-2" style="color: #fbbf24;">Pesan Sekarang! 📱</h3>
+     <p class="mb-4" style="color: #d1d5db;">Langsung chat WhatsApp untuk pesan</p><button id="order-btn" onclick="orderNow()" class="w-full py-4 px-6 rounded-2xl font-bold text-xl text-white pulse-glow transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-3" style="background-color: #22c55e;">
+      <svg width="28" height="28" viewbox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+      </svg> Pesan via WhatsApp </button>
+    </div>
+   </section><!-- Footer -->
+   <footer class="px-4 py-6 text-center" style="background-color: rgba(31, 41, 55, 0.8);">
+    <p id="address" class="font-semibold" style="color: #fbbf24;">📍 Jl. Mie Ayam Raya No. 123, Jakarta</p>
+    <p class="text-sm mt-2" style="color: #fcd34d;">⏰ Buka: 08.00 - 21.00 WIB</p>
+    <p class="text-sm mt-4" style="color: #d1d5db;">Made with ❤️ untuk pecinta Mie Ayam</p>
+   </footer>
+  </div>
+  <script>
+    const defaultConfig = {
+      logo_url: 'https://via.placeholder.com/120/ea580c/ffffff?text=LOGO',
+      shop_name: 'Mie Ayam Pak Joko',
+      tagline: 'Lezat, Gurih, Bikin Nagih! 🍜',
+      whatsapp_number: '6281234567890',
+      address: '📍 Jl. Mie Ayam Raya No. 123, Jakarta',
+      promo_title: '🔥 PROMO SPESIAL!',
+      promo_text: '🎉 Beli 2 Porsi Gratis 1 Es Teh! 🎉',
+      img_mie_original: '',
+      img_mie_bakso: '',
+      img_mie_ceker: '',
+      img_mie_komplit: '',
+      img_es_teh: '',
+      img_es_susu: '',
+      img_es_jeruk: '',
+      img_es_lemon: '',
+      img_teh_hangat: '',
+      img_kopi: '',
+      img_susu_hangat: '',
+      img_coklat: '',
+      primary_color: '#fb923c',
+      secondary_color: '#374151',
+      text_color: '#f3f4f6',
+      accent_color: '#22c55e',
+      background_color: '#1f2937',
+      font_family: 'Nunito',
+      font_size: 16
+    };
+    
+    function orderNow() {
+      const config = window.elementSdk?.config || defaultConfig;
+      const phone = config.whatsapp_number || defaultConfig.whatsapp_number;
+      const shopName = config.shop_name || defaultConfig.shop_name;
+      const message = encodeURIComponent(`Halo ${shopName}! Saya mau pesan mie ayam 🍜`);
+      const waUrl = `https://wa.me/${phone}?text=${message}`;
+      window.open(waUrl, '_blank', 'noopener,noreferrer');
+    }
+    
+    function updateMenuImage(imgId, emojiId, url) {
+      const imgEl = document.getElementById(imgId);
+      const emojiEl = document.getElementById(emojiId);
+      
+      if (!imgEl || !emojiEl) return;
+      
+      if (url && url.startsWith('https://')) {
+        imgEl.src = url;
+        imgEl.style.display = 'block';
+        emojiEl.style.display = 'none';
+      } else {
+        imgEl.style.display = 'none';
+        emojiEl.style.display = 'block';
+      }
+    }
+    
+    async function onConfigChange(config) {
+      const logoEl = document.getElementById('logo-image');
+      const shopNameEl = document.getElementById('shop-name');
+      const taglineEl = document.getElementById('tagline');
+      const addressEl = document.getElementById('address');
+      const promoTitleEl = document.getElementById('promo-title');
+      const promoTextEl = document.getElementById('promo-text');
+      
+      if (logoEl) logoEl.src = config.logo_url || defaultConfig.logo_url;
+      if (shopNameEl) shopNameEl.textContent = config.shop_name || defaultConfig.shop_name;
+      if (taglineEl) taglineEl.textContent = config.tagline || defaultConfig.tagline;
+      if (addressEl) addressEl.textContent = config.address || defaultConfig.address;
+      if (promoTitleEl) promoTitleEl.textContent = config.promo_title || defaultConfig.promo_title;
+      if (promoTextEl) promoTextEl.textContent = config.promo_text || defaultConfig.promo_text;
+      
+      // Update menu images
+      updateMenuImage('img-mie-original', 'emoji-mie-original', config.img_mie_original);
+      updateMenuImage('img-mie-bakso', 'emoji-mie-bakso', config.img_mie_bakso);
+      updateMenuImage('img-mie-ceker', 'emoji-mie-ceker', config.img_mie_ceker);
+      updateMenuImage('img-mie-komplit', 'emoji-mie-komplit', config.img_mie_komplit);
+      updateMenuImage('img-es-teh', 'emoji-es-teh', config.img_es_teh);
+      updateMenuImage('img-es-susu', 'emoji-es-susu', config.img_es_susu);
+      updateMenuImage('img-es-jeruk', 'emoji-es-jeruk', config.img_es_jeruk);
+      updateMenuImage('img-es-lemon', 'emoji-es-lemon', config.img_es_lemon);
+      updateMenuImage('img-teh-hangat', 'emoji-teh-hangat', config.img_teh_hangat);
+      updateMenuImage('img-kopi', 'emoji-kopi', config.img_kopi);
+      updateMenuImage('img-susu-hangat', 'emoji-susu-hangat', config.img_susu_hangat);
+      updateMenuImage('img-coklat', 'emoji-coklat', config.img_coklat);
+      
+      const customFont = config.font_family || defaultConfig.font_family;
+      document.body.style.fontFamily = `${customFont}, Nunito, sans-serif`;
+      
+      const baseSize = config.font_size || defaultConfig.font_size;
+      document.body.style.fontSize = `${baseSize}px`;
+    }
+    
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => { config.background_color = value; window.elementSdk.setConfig({ background_color: value }); }
+          },
+          {
+            get: () => config.secondary_color || defaultConfig.secondary_color,
+            set: (value) => { config.secondary_color = value; window.elementSdk.setConfig({ secondary_color: value }); }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => { config.text_color = value; window.elementSdk.setConfig({ text_color: value }); }
+          },
+          {
+            get: () => config.primary_color || defaultConfig.primary_color,
+            set: (value) => { config.primary_color = value; window.elementSdk.setConfig({ primary_color: value }); }
+          },
+          {
+            get: () => config.accent_color || defaultConfig.accent_color,
+            set: (value) => { config.accent_color = value; window.elementSdk.setConfig({ accent_color: value }); }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => config.font_family || defaultConfig.font_family,
+          set: (value) => { config.font_family = value; window.elementSdk.setConfig({ font_family: value }); }
+        },
+        fontSizeable: {
+          get: () => config.font_size || defaultConfig.font_size,
+          set: (value) => { config.font_size = value; window.elementSdk.setConfig({ font_size: value }); }
+        }
+      };
+    }
+    
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ['logo_url', config.logo_url || defaultConfig.logo_url],
+        ['shop_name', config.shop_name || defaultConfig.shop_name],
+        ['tagline', config.tagline || defaultConfig.tagline],
+        ['whatsapp_number', config.whatsapp_number || defaultConfig.whatsapp_number],
+        ['address', config.address || defaultConfig.address],
+        ['promo_title', config.promo_title || defaultConfig.promo_title],
+        ['promo_text', config.promo_text || defaultConfig.promo_text],
+        ['img_mie_original', config.img_mie_original || defaultConfig.img_mie_original],
+        ['img_mie_bakso', config.img_mie_bakso || defaultConfig.img_mie_bakso],
+        ['img_mie_ceker', config.img_mie_ceker || defaultConfig.img_mie_ceker],
+        ['img_mie_komplit', config.img_mie_komplit || defaultConfig.img_mie_komplit],
+        ['img_es_teh', config.img_es_teh || defaultConfig.img_es_teh],
+        ['img_es_susu', config.img_es_susu || defaultConfig.img_es_susu],
+        ['img_es_jeruk', config.img_es_jeruk || defaultConfig.img_es_jeruk],
+        ['img_es_lemon', config.img_es_lemon || defaultConfig.img_es_lemon],
+        ['img_teh_hangat', config.img_teh_hangat || defaultConfig.img_teh_hangat],
+        ['img_kopi', config.img_kopi || defaultConfig.img_kopi],
+        ['img_susu_hangat', config.img_susu_hangat || defaultConfig.img_susu_hangat],
+        ['img_coklat', config.img_coklat || defaultConfig.img_coklat]
+      ]);
+    }
+    
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c3562c233b46cee',t:'MTc2OTMxOTEwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
