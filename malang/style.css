@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    background-color: #f3bf808f;
+}
+
+/* NAVBAR */
+.navbar {
+    background:
+        radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        #7A3E1D;
+    background-size: 5px 5px;
+    height: 100px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.541);
+    z-index: 10;
+    position: relative;
+}
+.teks{
+    height: 190px;
+    display: flex;
+    margin-top: 30px;
+    padding-left: 90px;
+}
+.logo {
+    height: 150px;
+    width: 10px;
+    display: flex;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+/* BANNER */
+.banner {
+    height: 400px;
+
+    background:
+        linear-gradient(
+            to right,
+            rgba(122,62,29,0.85),
+            rgba(122,62,29,0.3),
+            rgba(122,62,29,0)
+        ),
+        url("gambar.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    padding: 0 60px;
+    text-align: left;
+    color: white;
+    text-shadow: 0 10px 10px brown;
+}
+
+.banner h1 {
+    font-size: 40px;
+    
+}
+
+.banner button {
+    margin-top: 30px;
+    padding: 10px 20px;
+    border: none;
+    background: #B23A2F;
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+    box-shadow: inset 0px 0 10px #ffffff ;
+}
+
+/* MENU */
+.menu {
+    padding: 60px 50px;
+    text-align: center;
+}
+.garis{
+    background: black;
+    width: 250px;
+    height: 1px;
+    display: flex;
+    margin: 10px auto;
+}
+.card-container {
+    flex-wrap: wrap;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.card {
+    background: white;
+    width: 250px;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 10px 15px brown;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card button {
+    margin-top: 10px;
+    padding: 8px;
+    border: none;
+    background: #7A3E1D;
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+    width: 200px;
+}
+.bawah{
+    background: #7A3E1D;
+    color: white;
+    padding: 50px 20px;
+}
+.bawah h1{
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 40px;
+}
+.form-pesan{
+    margin: auto;
+    max-width: 500px;
+}
+.grup{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+.grup label{
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+.grup input,
+.grup textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    font-size: 14px;
+}
+.grup input:focus,
+.grup textarea:focus {
+    box-shadow: 0 0 0 2px rgb(224, 43, 43);
+}
+.btn-kirim {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #e43a2b;
+    color: white;
+    font-size: 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-kirim:hover {
+    background: #922e25;
+}
+@media (max-width: 768px) {
+
+    .navbar {
+        
+        justify-content: space-between;
+        padding: 15px 20px;
+        height: 90px;
+        color: #7a3e1dcb;
+    }
+    .banner{
+        height: 300px;
+        padding: 20px;
+        text-align: left;
+        align-items: center;
+    }
+
+    .banner h1 {
+        font-size: 24px;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+}
